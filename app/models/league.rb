@@ -1,4 +1,4 @@
-class Leauge
+class League
   include Mongoid::Document
   
   field :name,          type: String

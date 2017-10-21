@@ -5,6 +5,13 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ gem 'adminlte-rails'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+#gem 'ckeditor', :git => 'http://github.com/galetahub/ckeditor.git'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'bootstrap-sass', '3.2.0.2'
+gem 'font-awesome-sass', '~> 4.4.0'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.1'
@@ -22,7 +29,7 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails'
 
 
 gem 'mongoid'

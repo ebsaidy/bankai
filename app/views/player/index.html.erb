@@ -1,0 +1,76 @@
+<br/><br/>
+<style type="text/css">
+  tr:nth-child(even){
+    background-color: #f2f2f2
+  }
+
+th {
+    background-color: #3c8dbc;
+    color: white;
+}
+</style>
+<div class="box">
+  <div class="box-header">
+      <h3 class="box-title">Player List</h3>
+  </div><!-- /.box-header -->
+      <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Place of Birth</th>
+                    <th>Date of Birth</th>
+                    <th>Address</th>
+                    <th>Team</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+                <% @t %>
+            <% @select.each do |se| %>
+            
+                
+                  
+                <tr>
+                  <td><%= se.first_name %></td>
+                  <td><%= se.middle_name %></td>
+                  <td><%= se.last_name %></td>
+                  <td><%= se.place_of_birth %></td>
+                  <td><%= se.date_of_birth %></td>
+                  <td><%= se.address %></td>
+                  <!-- <td><%= se.team_id%></td> -->
+
+                  <td><%= Team.find(se.team_id).name%></td>
+                  <td><%= %></td>
+                  <td><%= link_to "Delete", { :controller => 'player', :action => 'destroy', :id => se.id }, :method => :delete, data: { confirm: "Are you sure You want to delete?" } %></td>
+                </tr>
+            <%  %>
+             <% end %>
+        </table>
+
+        <!--  <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th>Team ID</th>
+                    <th>Team Name</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                <tr>
+            <% @t.each do |te| %>
+                <tr>
+                  <td><%= te.id %></td>
+                  <td><%= te.name %></td>
+              
+                  
+                </tr>
+            <% end %>
+        </table> -->
+        <h1><%@i%></h1>
+      </div>
+</div>

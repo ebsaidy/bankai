@@ -23,7 +23,11 @@ class AdminController < ApplicationController
       {:header => 'Make beautiful transitions', :progress => '80%'}
     ]
     
-    @divisions = [{:name => 'Division 1', :id => 1},{:name => 'Division 2', :id => 2},{:name => 'Division 3', :id => 3}]
+    
+  end
+  
+  def show
+    
   end
 
   def create

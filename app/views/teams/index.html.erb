@@ -1,0 +1,40 @@
+<br/><br/>
+<style type="text/css">
+  tr:nth-child(even){
+    background-color: #f2f2f2
+  }
+
+th {
+    background-color: #3c8dbc;
+    color: white;
+}
+</style>
+<div class="box">
+  <div class="box-header">
+      <h3 class="box-title">Team List</h3>
+  </div><!-- /.box-header -->
+      <div class="box-body">
+        <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Location</th>
+                  <th>Date Created</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+            <% @select.each do |se| %>
+                <tr>
+                  <td><%= link_to se.name, { :controller => 'teams', :action => 'show', :id => se.id }, :method => :get %></td>
+                  <td><%= se.location %></td>
+                  <td><%= se.created_date %></td>
+                  <td></td>
+                  <td><%= link_to "Delete", { :controller => 'teams', :action => 'destroy', :id => se.id }, :method => :delete, data: { confirm: "Are you sure You want to delete?" } %></td>
+              </tr>
+            <% end %>
+        </table>
+      </div>
+</div>

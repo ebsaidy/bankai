@@ -33,11 +33,6 @@ var NotificationList = React.createClass({
 
 var TaskList = React.createClass({
   handleClick: function() {
-
-    event.preventDefault();
-    $("#contentPane").empty();
-   
-
   },
   render: function(){
     return(
